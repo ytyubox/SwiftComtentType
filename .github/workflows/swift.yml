@@ -1,0 +1,15 @@
+name: Swift
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: macos-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Generate xcode project
+      run: swift package generate-xcodeproj --enable-code-coverage
+    - name: Generate xcode test report
+      run: xcodebuild -scheme FluentInterface-Package clean test
