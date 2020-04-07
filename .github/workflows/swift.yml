@@ -9,7 +9,7 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: Generate xcode project
-      run: swift package generate-xcodeproj --enable-code-coverage
-    - name: Generate xcode test report
-      run: xcodebuild -scheme FluentInterface-Package clean test
+    - name: build
+      run: swift build
+    - name: test
+      run: swift test 
