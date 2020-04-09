@@ -36,3 +36,6 @@ class PlainTextEncoder: TopLevelEncoder {
 	
 	
 }
+
+extension PlainTextEncoder: DataEncoder { }
+extension PlainTextDecoder: DataDecoder { }

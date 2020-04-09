@@ -1,27 +1,42 @@
 import Foundation
+import Combine
 /// The standards tree does not use any tree prefix:
 /// type "/" subtype ["+" suffix] *[";" parameter]
 /// - See also: https://en.wikipedia.org/wiki/Media_type
 ///
 public struct ContentType {
-	public init(type: String, subType: String, attritube: [String : CustomStringConvertible] = [:]) {
+	internal init(type: String, subType: String, decoder: DataDecoder, encoder: DataEncoder, attritube: [String : CustomStringConvertible] = [:]) {
 		self.type = type
 		self.subType = subType
+		self.decoder = decoder
+		self.encoder = encoder
 		self.attritube = attritube
 	}
-	
-	
+
 	public var type:String
 	public var subType:String
+	public var decoder: DataDecoder
+	public var encoder: DataEncoder
 	public var attritube:[String:CustomStringConvertible] = [:]
-	public var value:String {
+	
+}
+// MARK: - Getter
+public
+extension ContentType {
+	var value:String {
 		let flags = attritube.count > 0 ?  attritube.reduce(into:" ;", {$0 += "\($1.key)=\($1.value)" }
 			) : ""
 		return type+"/"+subType + flags
 	}
-	public var key:String {Self.headerFaild}
-	public func set(_ key:String,_ value: CustomStringConvertible) -> Self{
-		Self(type: type, subType: subType, attritube: [key:value])
+	var key:String {Self.headerFaild}
+}
+// MARK: - Mutating func
+public
+extension ContentType {
+	func set(_ key:String,_ value: CustomStringConvertible) -> Self{
+		var copied = attritube
+		copied[key] = value
+		return  Self(type: type, subType: subType, decoder: decoder, encoder: encoder, attritube: copied)
 	}
 }
 extension ContentType: Equatable {
@@ -31,32 +46,6 @@ extension ContentType: Equatable {
 	
 }
 
-// MARK: - Static member
-
-public extension ContentType {
-	static let headerFaild:String = "Content-Type"
-	static let json = applictaion("json")
-	static let urlEncode = applictaion("x-www-form-urlencoded")
-	static let formData = multipart("formdata")
-	static let plainText = text("plain")
-}
-
-// MARK: - dot func
-public extension ContentType {
-	static func applictaion(_ type:String) -> ContentType {
-		ContentType(type: "application",subType:  type)
-	}
-	static func multipart(_ type: String) -> ContentType {
-		ContentType(type: "multipart",subType: type)
-	}
-	
-	static func text(_ type: String) -> Self {
-		ContentType(type: "text", subType: type)
-	}
-	static func json(_ encoding: String) -> Self {
-		json.set("charset", encoding.uppercased())
-	}
-}
 
 // MARK: - know content-type list
 
@@ -65,7 +54,7 @@ extension ContentType:CaseIterable {
 		[
 			.json,
 			.plainText,
-			.formData,
+//			.formData,
 			.urlEncode,
 		]
 	}
