@@ -58,6 +58,32 @@ public extension ContentType {
 	}
 }
 
+// MARK: - know content-type list
+
+extension ContentType:CaseIterable {
+	public static var allCases: [ContentType] {
+		[
+			.json,
+			.plainText,
+			.formData,
+			.urlEncode,
+		]
+	}
+	init?(by value: String) {
+		for type in ContentType.allCases {
+			if type.value == value {
+				self = type
+				return
+			}
+		}
+		return nil
+	}
+	init?(by value:String?) {
+		guard let value = value else {return nil}
+		self.init(by: value)
+	}
+}
+
 
 extension URLRequest {
 	public mutating func set(_ contentType:ContentType?) {
