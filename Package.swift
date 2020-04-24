@@ -11,6 +11,9 @@ let package = Package(
         .library(
             name: "SwiftContentType",
             targets: ["SwiftContentType"]),
+        .library(
+                   name: "SwiftContentTypeCoder",
+                   targets: ["SwiftContentTypeCoder"]),
     ],
     dependencies: [
         // Dependencies declare other packages that this package depends on.
@@ -21,9 +24,16 @@ let package = Package(
         // Targets can depend on other targets in this package, and on products in packages which this package depends on.
         .target(
             name: "SwiftContentType",
-            dependencies: ["URLEncodedForm"]),
+            dependencies: []),
         .testTarget(
             name: "SwiftContentTypeTests",
-            dependencies: ["SwiftContentType"]),
+            dependencies: ["SwiftContentType","URLEncodedForm"]),
+        
+        .target(
+                   name: "SwiftContentTypeCoder",
+                   dependencies: ["SwiftContentType"]),
+        .testTarget(
+                   name: "SwiftContentTypeCoderTests",
+                   dependencies: ["SwiftContentTypeCoder"]),
     ]
 )
