@@ -26,7 +26,7 @@ public struct AnyContentType {
 public
 extension AnyContentType {
   var value:String {
-    let flags = attribute.count > 0 ?  attribute.reduce(into:" ;", {$0 += "\($1.key)=\($1.value)" }
+    let flags = attribute.count > 0 ?  attribute.reduce(into:"; ", {$0 += "\($1.key)=\($1.value)" }
       ) : ""
     return type+"/"+subType + flags
   }

@@ -6,15 +6,12 @@
 //
 
 import Foundation
-
+public
 struct MultipartFormData:ContentType {
-  let type: String = "mutlipart"
-  
-  let subType: String = "formdata"
-  
-  var bondary = ""
-  
-  var attritube: [String : CustomStringConvertible] = [:]
+  public var type: String { "mutlipart" }
+  public var subType: String { "formdata"}
+  public var bondary = ""
+  public var attritube: [String : CustomStringConvertible] = [:]
   
 }
 

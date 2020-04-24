@@ -69,7 +69,6 @@ public struct MultipartFormData {
         return .invalid(because: error)
       }
     }
-    
     data.append(DASH)
     data.append(boundaryData)
     data.append(DASH)

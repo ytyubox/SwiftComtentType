@@ -4,5 +4,5 @@ extension AnyContentType {
     AnyContentType(type: "text", subType: type)
   }
   
-  static let plainText = text("plain")
+  static var plainText:AnyContentType  {text("plain")}
 }
