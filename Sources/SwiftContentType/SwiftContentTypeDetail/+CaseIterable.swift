@@ -10,9 +10,9 @@ import Foundation
 extension AnyContentType:CaseIterable {
   public static var allCases: [AnyContentType] {
     [
-      .json,
+      .applictaionJson,
       .plainText,
-      .urlEncode,
+      .applictaionUrlEncode,
     ]
   }
 }

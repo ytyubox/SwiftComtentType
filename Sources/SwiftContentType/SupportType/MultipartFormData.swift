@@ -7,6 +7,17 @@
 
 import Foundation
 
+struct MultipartFormData:ContentType {
+  let type: String = "mutlipart"
+  
+  let subType: String = "formdata"
+  
+  var bondary = ""
+  
+  var attritube: [String : CustomStringConvertible] = [:]
+  
+}
+
 public extension AnyContentType {
   //  static let formData = multipart("formdata")
   //  static func multipart(_ type: String) -> ContentType {

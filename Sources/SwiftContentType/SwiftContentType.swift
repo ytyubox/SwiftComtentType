@@ -1,6 +1,6 @@
 public  protocol ContentType {
-  var type:String {get set}
-  var subType:String {get set}
+  var type:String {get}
+  var subType:String {get}
   var attritube:[String:CustomStringConvertible] {get set}
 }
 
@@ -49,6 +49,7 @@ extension AnyContentType {
 public
 extension AnyContentType {
   init?(by value: String?) {
+    /// Example:
     ///   Content-Type:
     ///   message/external-body;    <---- type/subType
     ///   access-type=URL;   <---- attritubeKey:value
