@@ -5,7 +5,6 @@
 ```swift
 ContentType.json.value          // "application/json"
 ContentType.urlEncode.value     // "application/x-www-form-urlencoded"
-ContentType.formData.value      // "multipart/formdata"
 ContentType.plainText.value     // "text/plain"
 ```
 ## Author

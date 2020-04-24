@@ -10,7 +10,7 @@ import Foundation
 extension URLRequest {
   public mutating func set(_ contentType:AnyContentType?) {
     guard let contentType = contentType else {return}
-    addValue(contentType.value, forHTTPHeaderField: contentType.key)
-    setValue(contentType.value, forHTTPHeaderField: contentType.key)
+    addValue(contentType.text, forHTTPHeaderField: contentType.key)
+    setValue(contentType.text, forHTTPHeaderField: contentType.key)
   }
 }

@@ -1,5 +1,5 @@
-import Foundation
 
-public extension AnyContentType {
+
+public extension ContentType {
   static var headerFaild:String {"Content-Type"}
 }
