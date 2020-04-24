@@ -7,25 +7,12 @@
 
 import Foundation
 
-extension ContentType:CaseIterable {
-  public static var allCases: [ContentType] {
+extension AnyContentType:CaseIterable {
+  public static var allCases: [AnyContentType] {
     [
       .json,
       .plainText,
       .urlEncode,
     ]
-  }
-  init?(by value: String) {
-    for type in ContentType.allCases {
-      if type.value == value {
-        self = type
-        return
-      }
-    }
-    return nil
-  }
-  init?(by value:String?) {
-    guard let value = value else {return nil}
-    self.init(by: value)
   }
 }

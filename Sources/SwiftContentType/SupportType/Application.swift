@@ -8,11 +8,11 @@
 import Foundation
 
 
-public extension ContentType {
+public extension AnyContentType {
 
 
-  static func applictaion(_ type:String) -> ContentType {
-    ContentType(type: "application",subType:  type)
+  static func applictaion(_ type:String) -> AnyContentType {
+    AnyContentType(type: "application",subType:  type)
   }
   static let json = applictaion("json")
 

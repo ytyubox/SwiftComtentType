@@ -1,5 +1,5 @@
 import Foundation
 
-public extension ContentType {
+public extension AnyContentType {
   static let headerFaild:String = "Content-Type"
 }

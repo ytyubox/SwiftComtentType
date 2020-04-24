@@ -7,7 +7,7 @@
 
 import Foundation
 
-public extension ContentType {
+public extension AnyContentType {
   //  static let formData = multipart("formdata")
   //  static func multipart(_ type: String) -> ContentType {
   //    ContentType(type: "multipart",subType: type)

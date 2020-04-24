@@ -7,8 +7,8 @@
 
 import Foundation
 
-extension ContentType: Equatable {
-  public static func == (lhs: ContentType, rhs: ContentType) -> Bool {
+extension AnyContentType: Equatable {
+  public static func == (lhs: AnyContentType, rhs: AnyContentType) -> Bool {
     lhs.type == rhs.type && lhs.subType == rhs.subType
   }
   

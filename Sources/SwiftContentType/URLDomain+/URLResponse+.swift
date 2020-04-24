@@ -8,9 +8,9 @@
 import Foundation
 public
 extension HTTPURLResponse {
-	var contentType: ContentType? {
-		let value = allHeaderFields[ContentType.headerFaild] as? String
-		let type = value?.split(separator: ";").first?.trimmingCharacters(in: .whitespacesAndNewlines)
-		return ContentType(by: type)
+	var contentType: AnyContentType? {
+		let value = allHeaderFields[AnyContentType.headerFaild] as? String
+//		let type = value?.split(separator: ";").first?.trimmingCharacters(in: .whitespacesAndNewlines)
+		return AnyContentType(by: value)
 	}
 }

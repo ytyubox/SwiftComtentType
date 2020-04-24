@@ -15,6 +15,6 @@ class HTTPURLResponseTests: XCTestCase {
 		let header = ["Content-Type":"application/json"]
 		let response = HTTPURLResponse(url: url, statusCode: 200, httpVersion: nil, headerFields: header)
 		XCTAssertNotNil(response)
-		XCTAssertEqual(response?.contentType, ContentType.json)
+		XCTAssertEqual(response?.contentType, AnyContentType.json)
 	}
 }
