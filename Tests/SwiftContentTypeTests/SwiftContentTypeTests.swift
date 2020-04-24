@@ -1,5 +1,5 @@
 import XCTest
-@testable import SwiftContentType
+import SwiftContentType
 
 final class SwiftContentTypeTests: XCTestCase {
 	func testContentType() {
