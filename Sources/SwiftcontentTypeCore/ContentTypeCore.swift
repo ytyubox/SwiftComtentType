@@ -11,8 +11,10 @@ public protocol ContentTypeDetail {
 }
 public extension ContentType where Self : ContentTypeDetail {
   var text:String {
-    let flags = self.attribute.count > 0 ?  attribute.reduce(into:"; ", {$0 += "\($1.key)=\($1.value)" }
-      ) : ""
+    let flags =
+      self.attribute.count > 0
+      ? attribute.reduce(into:"; ", {$0 += "\($1.key)=\($1.value)" })
+      : ""
     return type + "/" + subType + flags
   }
   var key:String {Self.headerFaild}

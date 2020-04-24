@@ -12,6 +12,6 @@ extension HTTPURLResponse {
 	var contentType: AnyContentType? {
 		let value = allHeaderFields[AnyContentType.headerFaild] as? String
     let contentTypeComponents = ContentTypeComponents(by: value)
-    return contentTypeComponents?.contentType
+    return contentTypeComponents.contentType
 	}
 }

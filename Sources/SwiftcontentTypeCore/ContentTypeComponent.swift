@@ -15,11 +15,11 @@ struct ContentTypeComponents {
   }
   
   
-  public var type:String
-  public var subType:String
+  public var type:String = ""
+  public var subType:String = ""
   public var attribute:[String:CustomStringConvertible] = [:]
   
-  public init?(by value: String?) {
+  public init(by value: String?) {
     /// Example:
     ///   Content-Type:
     ///   message/external-body;    <---- type/subType
@@ -29,11 +29,11 @@ struct ContentTypeComponents {
     
     guard
       var splited = value?.split(separator: ";")
-      else {return nil}
+      else {return}
     let typeList = splited.removeFirst().split(separator: "/")
     guard
       let type = typeList.first
-      else {return nil}
+      else {return}
     let subType = typeList.last
     self.type = String(type)
     self.subType = String(subType ?? "")

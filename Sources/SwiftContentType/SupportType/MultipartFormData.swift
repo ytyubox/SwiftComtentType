@@ -18,7 +18,10 @@ struct MultipartFormData:ContentTypeDetail {
   
   public var attritube: [String : CustomStringConvertible] {
     get {
-      _attritube
+      var copy = _attritube
+      copy["bondary"] = bondary
+      return copy
+      
     }
     set {
       _attritube = newValue

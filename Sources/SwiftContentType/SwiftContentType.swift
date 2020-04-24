@@ -18,12 +18,15 @@ public struct AnyContentType:ContentTypeDetail {
     self.subType = subType
     self.attribute = attritube
   }
+  public init?(string: String) {
+    let component = ContentTypeComponents(by: string)
+    guard
+    let it = component.contentType else { return nil}
+    self = it
+  }
 }
-extension AnyContentType: ContentType { }
-// MARK: - Getter
+extension AnyContentType: ContentType {}
 
-
-// MARK: - Mutating func
 public
 extension AnyContentType {
   func set(_ key:String,_ value: CustomStringConvertible) -> Self{
@@ -35,7 +38,7 @@ extension AnyContentType {
 
 
 extension ContentTypeComponents {
-  public var contentType:AnyContentType {
-    AnyContentType(type: "", subType: "")
+  public var contentType:AnyContentType? {
+    AnyContentType(type: type, subType: subType,attritube: attribute)
   }
 }

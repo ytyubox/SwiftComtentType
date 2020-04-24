@@ -32,7 +32,7 @@ let package = Package(
       dependencies: ["SwiftcontentTypeCore"]),
     .testTarget(
       name: "SwiftContentTypeTests",
-      dependencies: ["SwiftContentType","URLEncodedForm"]),
+      dependencies: ["SwiftContentType","URLEncodedForm","SwiftcontentTypeCore"]),
     
     .target(
       name: "SwiftContentTypeCoder",
