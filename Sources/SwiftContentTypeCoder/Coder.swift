@@ -13,10 +13,3 @@ import Combine
 
 public typealias DataDecoder = URLEncodedForm.DataDecoder
 public typealias DataEncoder = URLEncodedForm.DataEncoder
-
-//extension JSONDecoder: DataDecoder{
-//  public static var mimeType: MIMETypeDetail = AnyContentType.applictaionJson
-//}
-//extension JSONEncoder: DataEncoder{
-//  public static var mimeType: MIMETypeDetail = AnyContentType.applictaionJson
-//}

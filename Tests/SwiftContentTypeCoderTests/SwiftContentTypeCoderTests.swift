@@ -15,10 +15,9 @@ import SwiftContentTypeCoder
  */
 
 final class SwiftContentTypeCoderTests: XCTestCase {
-  func testDecodingJSON() {
-    
-  }
-  func testEncodingJSON() {
-    
+  func testDefaultIsUnique() {
+    let default1 = DecoderConfiguration.default()
+    let default2 = DecoderConfiguration.default()
+    XCTAssertFalse(default1 === default2)
   }
 }
