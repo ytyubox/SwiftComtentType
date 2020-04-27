@@ -17,9 +17,9 @@ let package = Package(
       .library(
         name: "SwiftContentTypeCoder",
         targets: ["SwiftContentTypeCoder"]),
-    .library(
-      name: "SwiftContentTypePlugin",
-      targets: ["SwiftContentTypePlugin"]),
+//    .library(
+//      name: "SwiftContentTypePlugin",
+//      targets: ["SwiftContentTypePlugin"]),
   ],
   dependencies: [
     // Dependencies declare other packages that this package depends on.
@@ -32,21 +32,21 @@ let package = Package(
       dependencies: ["SwiftcontentTypeCore"]),
     .testTarget(
       name: "SwiftContentTypeTests",
-      dependencies: ["SwiftContentType","URLEncodedForm","SwiftcontentTypeCore"]),
+      dependencies: ["SwiftContentType","SwiftcontentTypeCore"]),
     
     .target(
       name: "SwiftContentTypeCoder",
-      dependencies: ["SwiftContentType"]),
+      dependencies: ["SwiftContentType","URLEncodedForm"]),
     .testTarget(
       name: "SwiftContentTypeCoderTests",
       dependencies: ["SwiftContentTypeCoder"]),
     
-    .target(
-      name: "SwiftContentTypePlugin",
-      dependencies: ["SwiftContentType"]),
-    .testTarget(
-      name: "SwiftContentTypePluginTests",
-      dependencies: ["SwiftContentTypePlugin"]),
+//    .target(
+//      name: "SwiftContentTypePlugin",
+//      dependencies: ["SwiftContentType"]),
+//    .testTarget(
+//      name: "SwiftContentTypePluginTests",
+//      dependencies: ["SwiftContentTypePlugin"]),
     
     .target(
         name: "SwiftcontentTypeCore",

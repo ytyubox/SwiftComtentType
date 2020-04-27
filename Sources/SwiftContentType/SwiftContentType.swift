@@ -7,7 +7,7 @@ import SwiftcontentTypeCore
 ///
 
 
-public struct AnyContentType:ContentTypeDetail {
+public struct AnyContentType:MIMETypeDetail {
 
   public var type:String
   public var subType:String

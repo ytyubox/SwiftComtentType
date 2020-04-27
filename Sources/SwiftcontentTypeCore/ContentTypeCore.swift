@@ -3,13 +3,13 @@ public  protocol ContentType {
   var text: String {get}
 }
 
-public protocol ContentTypeDetail {
+public protocol MIMETypeDetail {
   var type:String {get}
   var subType:String {get}
   var attribute:[String:CustomStringConvertible] {get set}
   
 }
-public extension ContentType where Self : ContentTypeDetail {
+public extension ContentType where Self : MIMETypeDetail {
   var text:String {
     let flags =
       self.attribute.count > 0

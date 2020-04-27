@@ -6,16 +6,17 @@
 //
 
 import Foundation
-import Combine
-public protocol DataDecoder {
-	func decode<T>(_: T.Type, from: Data) throws -> T where T: Decodable
-}
+import SwiftcontentTypeCore
+import SwiftContentType
+import URLEncodedForm
+import Combine  
 
-public protocol DataEncoder {
-	func encode<T>(_: T) throws -> Data where T: Encodable
-}
+public typealias DataDecoder = URLEncodedForm.DataDecoder
+public typealias DataEncoder = URLEncodedForm.DataEncoder
 
-extension JSONDecoder: DataDecoder{
-}
-extension JSONEncoder: DataEncoder{
-}
+//extension JSONDecoder: DataDecoder{
+//  public static var mimeType: MIMETypeDetail = AnyContentType.applictaionJson
+//}
+//extension JSONEncoder: DataEncoder{
+//  public static var mimeType: MIMETypeDetail = AnyContentType.applictaionJson
+//}

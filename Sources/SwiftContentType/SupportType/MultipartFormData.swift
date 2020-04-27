@@ -7,7 +7,7 @@
 
 import SwiftcontentTypeCore
 public
-struct MultipartFormData:ContentTypeDetail {
+struct MultipartFormData:MIMETypeDetail {
   public var attribute: [String : CustomStringConvertible]
   
   
