@@ -4,12 +4,22 @@ import SwiftContentTypeCoder
 
 
 /**
+ 
+**test function sample**
+ 
+ 
  ```swift
- func testDecoding<#MIMEType#>() {
+ import XCTest
+ import SwiftContentTypeCoder
+
+ class <#MIMEType#>CoderTests: XCTestCase {
+
+   func testDecoding<#MIMEType#>() {
  
- }
- func testEncoding<#MIMEType#>() {
+   }
+   func testEncoding<#MIMEType#>() {
  
+   }
  }
  ```
  */
