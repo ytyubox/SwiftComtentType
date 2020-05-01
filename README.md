@@ -3,10 +3,11 @@
 [![SPM](https://img.shields.io/badge/spm-compatible-brightgreen.svg?style=flat)](https://github.com/apple/swift-package-manager)
 
 ```swift
-ContentType.json.value          // "application/json"
-ContentType.urlEncode.value     // "application/x-www-form-urlencoded"
-ContentType.plainText.value     // "text/plain"
+ContentType.json.text          // "application/json"
+ContentType.urlEncode.text     // "application/x-www-form-urlencoded"
+ContentType.plainText.text     // "text/plain"
 ```
+
 ## Author
 
 twitter : [@YuTsungYu](https://twitter.com/YuTsungYu) 

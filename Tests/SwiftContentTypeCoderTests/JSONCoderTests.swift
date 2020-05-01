@@ -60,6 +60,7 @@ class JSONCoderTests: XCTestCase{
           await.fulfill()
     }
     wait(for: [await], timeout: 10)
+    sink.cancel()
   }
 }
 
