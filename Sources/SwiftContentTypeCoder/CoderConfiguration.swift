@@ -15,7 +15,6 @@ public class DecoderConfiguration: SigntonWithDefault {
       with: [
         .applictaionJson:JSONDecoder(),
         .applictaionUrlEncode: URLEncodedFormDecoder(),
-        .plainText:PlainTextDecoder(),
       ]
     )
     
@@ -45,7 +44,6 @@ public class EncoderConfiguration:SigntonWithDefault {
     EncoderConfiguration(with: [
       .applictaionJson:JSONEncoder(),
       .applictaionUrlEncode: URLEncodedFormEncoder(),
-      .plainText:PlainTextEncoder(),
     ])
   }
   internal var registedEncoder:[AnyContentType:MIMEEncoder]
